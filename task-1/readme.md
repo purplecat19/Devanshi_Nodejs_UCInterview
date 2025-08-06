@@ -1,4 +1,6 @@
-🧩 Friends Nickname Generator
+🧩 Friends Nickname Generator!
+
+
 Ever wondered what your Friends-style nickname would be? No? Well, too bad — you're getting one anyway.
 
 🚀 What It Does
