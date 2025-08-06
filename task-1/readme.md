@@ -1,23 +1,17 @@
-# Friends Nickname Generator
+🧩 Friends Nickname Generator
+Ever wondered what your Friends-style nickname would be? No? Well, too bad — you're getting one anyway.
 
-Could you *be* any more iconic?  
-This mini-project generates a quirky nickname for you, straight out of the Friends universe.
+🚀 What It Does
+You give us your first name.
+We chop it to 4 letters (if it's shorter, we Joey it up with some *).
 
-### 🚀 How It Works
-- You enter your first name.
-- We take the first 4 letters of it (padding with `*` if it’s too short — Joey style).
-- Then, we summon a random surname from the Friends gang using... **time itself**.
+Then we pick a surname from the Friends universe using — wait for it — the current timestamp.
+Using "Date.now" which gives us the exact time (in miliseconds) since the unix epoch (Jan 1, 1970). Then we divide it by 7, and pick the surname, based on the remainder.
+It’s like fate. But with JavaScript.
 
-That’s right — `Date.now()` gives us the current timestamp (in milliseconds since 1970), and we mod it by the number of surnames (7).  
-It's not pure chaos, but it *feels* like fate picked your name. ✨
+⚙️ Running It in VS Code
+If you tried running this with prompt() in Node.js and your terminal screamed at you — yeah, same.
 
----
+Use prompt-sync to fix that:
 
-### ⚙️ VS Code Fixes
-If you’re running this in VS Code using Node.js:
-- `prompt()` **doesn’t work in Node by default**.  
-  So you can switch to [`prompt-sync`](https://www.npmjs.com/package/prompt-sync) for smooth input handling.
-
-To install it:
-```bash
-npm install prompt-sync
+(npm install prompt-sync)
