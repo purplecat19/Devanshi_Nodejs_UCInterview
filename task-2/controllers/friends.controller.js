@@ -10,13 +10,24 @@ const getFriends = async (req, res) => {
     const response = await axios.get('https://api.tvmaze.com/singlesearch/shows?q=friends&embed=episodes');
 
     // send back the data we got from TVMaze as JSON
+
+    //make json output pretty
    
-    res.json(response.data);
+    const result = {
+      name: data.name,
+      summary: data.summary,
+      image: data.image.original,
+      episodes: data._embedded.episodes.map((ep) => ({
+        name: ep.name,
+        airdate: ep.airdate,
+        summary: ep.summary,
+      })),
+    };
+
+    res.status(200).json(result);
   } catch (error) {
-    // sends back a 500 error message
-    res.status(500).json({ error: 'Failed to fetch Friends data' });
+    res.status(500).json({ message: 'Something went wrong', error: error.message });
   }
 };
 
-// export the function so other files can use it
-module.exports = { getFriends };
+module.exports = { getFriendsData };
